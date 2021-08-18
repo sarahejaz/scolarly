@@ -1,0 +1,24 @@
+<div style="background-color: #e2edfd; overflow-x: hidden; height: 100vh; text-align: center;">
+    <div style="text-align: left; margin-top: 8px; margin-left: 8px;">
+        <a href="http://localhost:4200/home">Home</a> > <a href="http://localhost:4200/get-notes">My Notes</a> > <u>View Note</u>
+    </div>
+    <br><br><br><br><br>
+    <h2 style="font-weight: bold;">My Note</h2>
+    <br><br>
+    <div *ngIf="mynote!=undefined" style="text-align: center; background-color: white; width: 800px; margin-left: auto; margin-right: auto;">
+        <br><br>
+        <h2>{{mynote.title}}</h2>
+        <br><br>
+        <p [innerHTML]="mynote.description | safeHtmlPipe"></p>
+        <br><br><br>
+        <p style="font-size: 13px;"><i>{{mynote.date | date}}</i></p>
+        <br>
+        <button class="btn btn-dark btn-sm;"
+        style="height: 30px; width:100px; padding: 0; color: white; background-color: #345995; font-size: 15px; border: none;"
+        type="submit"  (click)="editNote()">
+        Edit</button>
+        <br><br><br>
+    </div>
+    
+</div>
+

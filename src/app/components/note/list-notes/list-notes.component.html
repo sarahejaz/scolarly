@@ -1,0 +1,63 @@
+<div style="background-color: #e2edfd; overflow-x: hidden; height: 100vh; text-align: center;">
+    <div style="text-align: left; margin-top: 8px; margin-left: 8px;">
+        <a href="http://localhost:4200/home">Home</a> > <u>My Notes</u>
+    </div>
+    <br><br><br><br><br>
+    <h2 style="margin-left: 15px; font-weight: bold; ">My Notes</h2>
+    <br><br>
+
+    <button class="btn btn-dark btn-sm; updateButton"
+    style="height: 40px; width:150px; padding: 0; color: white; background-color: #187ecc; font-size: 20px; border: none;"
+    (click)="addNote()">
+    Add Note</button>
+
+    <br><br><br>
+
+    <div style="font-size: 15px;">
+        <table style="margin-left: auto; margin-right: auto;  background-color: white">
+            <tr>
+                <th style="width: 300px;padding: 10px;">
+                    TITLE
+                </th>
+
+                <th style="width: 200px;padding: 10px;">
+                    DATE
+                </th>
+            </tr>
+            <tr *ngFor="let n of allNotes; let i = index">
+                <td style="width: 300px; padding-left: 10px;">
+                    <p>{{n.title}}</p>
+                </td>
+                <td style="width: 200px; padding-left: 10px;">
+                    <p>{{n.date | date}}</p>
+                </td>
+                <td style="width: 100px;">
+                    <p>
+                        <button class="btn btn-dark btn-sm; updateButton"
+                        style="height: 30px; width:80px; padding: 0; color: white; background-color: #345995; font-size: 15px; border: none;"
+                        type="submit"
+                        [routerLink]="['/view-note/', n._id]">
+                        View</button>
+                    </p>
+                </td>
+                <td style="width: 100px;">
+                    <p>
+                        <button class="btn btn-dark btn-sm; updateButton"
+                        style="height: 30px; width:80px; padding: 0; color: white; background-color:red; font-size: 15px; border: none;"
+                        type="submit"
+                        [routerLink]="['/delete-note/', n._id]">
+                        Delete</button>
+                    </p>
+                </td>
+            </tr>
+            
+        </table>
+        <br><br>
+        <button class="btn btn-dark btn-sm; updateButton"
+        style="height: 35px; width: 100px; padding: 0; color: white; background-color: #6b0c53; font-size: 15px; border: none;"
+        type="submit"
+        (click)="goHome()">
+        Home</button>
+        <br><br><br>
+    </div>
+</div>

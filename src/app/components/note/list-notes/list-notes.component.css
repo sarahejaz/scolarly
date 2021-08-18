@@ -1,0 +1,13 @@
+.updateButton {
+    background-color: #345995;
+    border: none;
+    height: 48px;
+    width: 230px;
+    font-size: 20px;
+    color: white;
+}
+
+.desc>img {
+    width: 10%;
+    height: 10%;
+}
