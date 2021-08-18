@@ -1,0 +1,19 @@
+POST http://localhost:4000/api/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "sarah@email.com",
+    "password": "abc123"
+}
+
+###
+
+POST http://localhost:4000/api/createNote HTTP/1.1
+content-type: application/json
+authorization: "5f81eb19430aba2f7075089a"
+
+{
+    "title": "Taha is the best",
+    "description":"Yes I cannot believe but is the truth",
+    "date":"10/10/10"
+}
