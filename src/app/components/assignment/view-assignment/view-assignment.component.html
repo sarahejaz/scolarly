@@ -1,0 +1,46 @@
+<div style="background-color: #ffe0ee; overflow-x: hidden; height: 100vh; text-align: center;">
+    <div style="text-align: left; margin-top: 8px; margin-left: 8px;">
+        <a href="http://localhost:4200/home">Home</a> > <a href="http://localhost:4200/get-assignments">My Assignments</a> > <u>View Assignment</u>
+    </div>
+    <br><br><br><br><br>
+    <h2 style="font-weight: bold;">My Assignment</h2>
+    <br><br>
+    <div *ngIf="myassignment!=undefined" style="text-align: center; background-color: white; width: 800px; margin-left: auto; margin-right: auto;">
+        <br>
+        <h2>{{myassignment.subject}}</h2>
+        <br>
+        <h4>Assignment # {{myassignment.assignmentNo}}</h4>
+        <br>
+        <p>{{myassignment.description}}</p>
+        <br><br>
+
+        <table style="margin-left: auto; margin-right: auto;">
+            <tr>
+                <td style="width: 150px;">
+                    <p style="font-size: 18px;"><b>Due Date: </b></p>
+                </td>
+                <td style="width: 150px;">
+                    <p style="font-size: 18px;">{{myassignment.dueDate | date}}</p>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 150px;">
+                    <p style="font-size: 18px;"><b>Due Time: </b></p>
+                </td>
+                <td style="width: 150px;">
+                    <p style="font-size: 18px;">{{myassignment.dueTime}}</p>
+                </td>
+            </tr>
+        </table>
+
+        <br>
+
+        <button class="btn btn-dark btn-sm;"
+        style="height: 30px; width:100px; padding: 0; color: white; background-color: #E40066; font-size: 15px; border: none"
+        type="submit"  (click)="editAssignment()">
+        Edit</button>
+        <br><br>
+    </div>
+    <br><br><br><br>
+</div>
+
