@@ -1,4 +1,6 @@
-# Scolarly2
+# Scolarly
+
+Scolarly is a personal management application for students. You can maintain your assignment details and due dates, save your notes, add your timetable, and set reminders regarding your studies.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 
