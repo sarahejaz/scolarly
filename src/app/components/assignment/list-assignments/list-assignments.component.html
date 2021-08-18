@@ -1,0 +1,150 @@
+<div style="background-color: #ffe0ee; overflow-x: hidden; height: 100vh; text-align: center;">
+    <div style="text-align: left; margin-top: 8px; margin-left: 8px;">
+        <a href="http://localhost:4200/home">Home</a> > <u>My Assignments</u>
+    </div>
+    <br><br><br><br><br>
+    <h2 style="margin-left: 15px; font-weight: bold; ">My Assignments</h2>
+    <br><br>
+
+
+    <button class="btn btn-dark btn-sm; updateButton"
+    style="height: 40px; width:220px; padding: 0; color: white; background-color: #E40066; font-size: 20px; border: none;"
+    (click)="addAssignment()">
+    Add Assignment</button>
+
+    <br><br><br><br>
+
+    <h4 style="margin-left: 15px; font-weight: bold; "><i>Assigned</i></h4>
+    <br><br><br>
+
+    <div style="font-size: 15px;">
+        <table style="margin-left: auto; margin-right: auto;  background-color: white">
+            <tr>
+                <th style="width: 10px; padding: 10px;">
+                    Done
+                </th>
+                <th style="width: 320px;padding: 10px;">
+                    SUBJECT
+                </th>
+                <th style="width: 190px;padding: 10px;">
+                    ASSIGNMENT NUMBER
+                </th>
+                <th style="width: 200px;padding: 10px;">
+                    DUE DATE
+                </th>
+                <th style="width: 200px;padding: 10px;">
+                    DUE TIME
+                </th>
+            </tr>
+            <tr *ngFor="let n of allNotDoneAssignments; let i = index">
+                <td style="width: 10px; padding-left: 10px;">
+                    <input (change)="FieldsChange($event, n)" value="angular" type="checkbox"/>
+                </td>
+                <td style="width: 320px; padding-left: 10px;">
+                    <p>{{n.subject}}</p>
+                </td>
+                <td style="width: 190px; padding-left: 10px;">
+                    <p>{{n.assignmentNo}}</p>
+                </td>
+                <td style="width: 200px; padding-left: 10px;">
+                    <p>{{n.dueDate | date}}</p>
+                </td>
+                <td style="width: 200px; padding-left: 10px;">
+                    <p>{{n.dueTime}}</p>
+                </td>
+                <td style="width: 100px;">
+                    <p>
+                        <button class="btn btn-dark btn-sm; updateButton"
+                        style="height: 30px; width:80px; padding: 0; color: white; background-color: #345995; font-size: 15px; border: none;"
+                        type="submit"
+                        [routerLink]="['/view-assignment/', n._id]">
+                        View</button>
+                    </p>
+                </td>
+                <td style="width: 100px;">
+                    <p>
+                        <button class="btn btn-dark btn-sm; updateButton"
+                        style="height: 30px; width:80px; padding: 0; color: white; background-color:red; font-size: 15px; border: none;"
+                        type="submit"
+                        [routerLink]="['/delete-assignment/', n._id]">
+                        Delete</button>
+                    </p>
+                </td>
+            </tr>
+            
+        </table>
+        <br><br>
+    </div>
+
+    <br><br>
+    <h4 style="margin-left: 15px; font-weight: bold; "><i>Done</i></h4>
+    <br><br>
+    <div style="font-size: 15px; color: gray;">
+        <table style="margin-left: auto; margin-right: auto;  background-color: white">
+            <tr>
+                <th style="width: 10px; padding: 10px;">
+                    Done
+                </th>
+                <th style="width: 320px;padding: 10px;">
+                    SUBJECT
+                </th>
+                <th style="width: 190px;padding: 10px;">
+                    ASSIGNMENT NUMBER
+                </th>
+                <th style="width: 200px;padding: 10px;">
+                    DUE DATE
+                </th>
+                <th style="width: 200px;padding: 10px;">
+                    DUE TIME
+                </th>
+            </tr>
+            <tr *ngFor="let n of allDoneAssignments; let i = index">
+                <td style="width: 10px; padding-left: 10px;">
+                    <input (change)="FieldsChange($event, n)" value="angular" type="checkbox" checked="true"/>
+                </td>
+                <td style="width: 320px; padding-left: 10px;">
+                    <p>{{n.subject}}</p>
+                </td>
+                <td style="width: 190px; padding-left: 10px;">
+                    <p>{{n.assignmentNo}}</p>
+                </td>
+                <td style="width: 200px; padding-left: 10px;">
+                    <p>{{n.dueDate | date}}</p>
+                </td>
+                <td style="width: 200px; padding-left: 10px;">
+                    <p>{{n.dueTime}}</p>
+                </td>
+                <td style="width: 100px;">
+                    <p>
+                        <button class="btn btn-dark btn-sm; updateButton"
+                        style="height: 30px; width:80px; padding: 0; color: white; background-color: #345995; font-size: 15px; border: none;"
+                        type="submit"
+                        [routerLink]="['/view-assignment/', n._id]">
+                        View</button>
+                    </p>
+                </td>
+                <td style="width: 100px;">
+                    <p>
+                        <button class="btn btn-dark btn-sm; updateButton"
+                        style="height: 30px; width:80px; padding: 0; color: white; background-color:red; font-size: 15px; border: none;"
+                        type="submit"
+                        [routerLink]="['/delete-assignment/', n._id]">
+                        Delete</button>
+                    </p>
+                </td>
+            </tr>
+            
+        </table>
+        <br><br>
+    </div>
+    
+    <br><br>
+
+    <button class="btn btn-dark btn-sm; updateButton"
+    style="height: 35px; width: 100px; padding: 0; color: white; background-color: #6b0c53; font-size: 15px; border: none;"
+    type="submit"
+    (click)="goHome()">
+    Home</button>
+    <br><br><br>
+
+</div>
