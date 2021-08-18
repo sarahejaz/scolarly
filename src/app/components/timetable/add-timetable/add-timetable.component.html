@@ -1,0 +1,29 @@
+<div style="background-color: #c7faf1; overflow-x: hidden;">
+    <div style="text-align: left; margin-top: 8px; margin-left: 8px;">
+        <a href="http://localhost:4200/home">Home</a> > <a href="http://localhost:4200/get-timetables">My Timetables</a> > <u>Add a Timetable</u>
+    </div>
+    <br><br><br><br><br>
+    <h2 style="font-weight: bold; text-align: center;">Upload Timetable</h2>
+    <br>
+    <p style="text-align: center; font-size: 14px;">File must be image (.jpg, .jpeg, .png, .gif) or PDF (.pdf)</p>
+    <br><br><br><br><br>
+  
+      <div class="row justify-content-center">
+  
+        <div>
+            <div class="custom-file" style="margin-right: 100px;">
+                <form action="/api/upload" method="post" enctype="multipart/form-data">
+                    <input  (change)="fileChange($event)"  type="file"  class="custom-file-input"  id="inputGroupFile01"  aria-describedby="inputGroupFileAddon01">
+                </form>
+                <label id="displayfilename" class="custom-file-label" for="inputGroupFile01" style="width:400px;">Choose file</label>
+            </div>
+            <br><br><br><br><br><br><br><br><br>
+            <div style="text-align: center;">
+                <button class="btn btn-dark btn-sm; saveButton" (click)="upload()" id="btnUpload">Upload</button>
+            </div>
+        </div>
+  
+      </div>
+      <br><br><br><br><br><br>
+  </div>
+  

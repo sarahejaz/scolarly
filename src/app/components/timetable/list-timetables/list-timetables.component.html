@@ -1,0 +1,63 @@
+<div style="background-color: #c7faf1; overflow-x: hidden; height: 100vh; text-align: center;">
+    <div style="text-align: left; margin-top: 8px; margin-left: 8px;">
+        <a href="http://localhost:4200/home">Home</a> > <u>My Timetables</u>
+    </div>
+    <br><br><br><br><br>
+    <h2 style="margin-left: 15px; font-weight: bold; ">My Timetables</h2>
+    <br><br>
+
+    <button class="btn btn-dark btn-sm; updateButton"
+    style="height: 40px; width:170px; padding: 0; color: white; background-color:  #02b692; font-size: 20px; border: none;"
+    (click)="addTimetable()"
+    >
+    Add Timetable</button>
+
+    <br><br><br>
+
+    <div style="font-size: 15px;">
+        <table style="margin-left: auto; margin-right: auto;  background-color: white">
+            <tr>
+                <th style="width: 150px;padding: 10px;">
+                    
+                </th>
+                <th style="width: 380px;padding: 10px;">
+                    TIMETABLES
+                </th>
+            </tr>
+            <tr *ngFor="let n of allTimetables; let i = index">
+                <td style="width: 150px; padding-left: 10px;">
+                    <p>{{i+1}}</p>
+                </td>
+                <td style="width: 380px; padding-left: 10px;">
+                    <p>{{allTimetables[i]}}</p>
+                </td>
+                <td style="width: 100px;">
+                    <p>
+                        <button class="btn btn-dark btn-sm; updateButton"
+                        style="height: 30px; width:80px; padding: 0; color: white; background-color: #345995; font-size: 15px; border: none;"
+                        type="submit"
+                        [routerLink]="['/view-timetable/', getUrl(i)]">
+                        View</button>
+                    </p>
+                </td>
+                <td style="width: 100px;">
+                    <p>
+                        <button class="btn btn-dark btn-sm; updateButton"
+                        style="height: 30px; width:80px; padding: 0; color: white; background-color:red; font-size: 15px; border: none;"
+                        type="submit"
+                        [routerLink]="['/delete-timetable/', getUrl(i)]">
+                        Delete</button>
+                    </p>
+                </td>
+            </tr>
+            
+        </table>
+        <br><br>
+        <button class="btn btn-dark btn-sm; updateButton"
+        style="height: 35px; width: 100px; padding: 0; color: white; background-color: #6b0c53; font-size: 15px; border: none;"
+        type="submit"
+        (click)="goHome()">
+        Home</button>
+        <br><br><br>
+    </div>
+</div>
