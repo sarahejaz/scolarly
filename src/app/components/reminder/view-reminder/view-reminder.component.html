@@ -1,0 +1,38 @@
+<div style="background-color:#ffcec9; overflow-x: hidden; height: 100vh; text-align: center;">
+    <div style="text-align: left; margin-top: 8px; margin-left: 8px;">
+        <a href="http://localhost:4200/home">Home</a> > <a href="http://localhost:4200/get-reminders">My Reminders</a> > <u>View Reminder</u>
+    </div>
+    <br><br><br><br><br>
+    <h2 style="font-weight: bold;">My Reminder</h2>
+    <br><br>
+    <div *ngIf="myreminder!=undefined" style="text-align: center; background-color: white; width: 800px; margin-left: auto; margin-right: auto;">
+        <br>
+        <h2>{{myreminder.title}}</h2>
+        <br>
+        <p>{{myreminder.description}}</p>
+        <br><br>
+
+        <div *ngIf="myreminder.dueDate!=undefined">
+            <table style="margin-left: auto; margin-right: auto;">
+                <tr>
+                    <td style="width: 150px;">
+                        <p style="font-size: 18px;"><b>Due Date: </b></p>
+                    </td>
+                    <td style="width: 150px;">
+                        <p style="font-size: 18px;">{{myreminder.dueDate | date}}</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <br>
+
+        <button class="btn btn-dark btn-sm;"
+        style="height: 30px; width:100px; padding: 0; color: white; background-color:#fb4d3d; font-size: 15px; border: none"
+        type="submit"  (click)="editReminder()">
+        Edit</button>
+        <br><br>
+    </div>
+    <br><br><br><br>
+</div>
+
