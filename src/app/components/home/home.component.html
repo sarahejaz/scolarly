@@ -1,0 +1,36 @@
+<div>
+    <div style="text-align: right; margin-top: 6px; margin-right: 6px;">
+      <input type="image" src="/assets/help-button.png" style="height: 3%; width: 3%;" (click)="goToHelp()"/>
+    </div>
+    <h1 style="text-align: center; padding-top: 30px; padding-bottom: 10px; font-weight: bold;">SCOLARLY</h1>
+    <h3 style="text-align: center; font-style: italic;">For all your study needs!</h3>
+    
+    <div class="container" style="text-align: center; padding-top: 90px;">
+        <div class="row">
+          <div class="col-sm" style="background-color: #e2edfd; padding-top: 40px; padding-bottom: 40px; border-style: solid; border-width: 4px; border-color: white;">
+            <h4 class="homeHeading">Notes</h4>
+            <button (click)="goToNotes()" type="button" class="btn btn-primary; homeButton">Go to My Notes</button>
+          </div>
+
+          <div class="col-sm" style="background-color:#ffe0ee; padding-top: 40px; padding-bottom: 40px; text-align: center; border-style: solid; border-width: 4px; border-color: white;">
+            <h4 class="homeHeading">Assignments</h4>
+            <button (click)="goToAssignments()" type="button" class="btn btn-primary; homeButton" style="background-color: #E40066">Go to My Assignments</button>
+          </div>
+          <!--<div class="col-sm">
+            <h4 class="homeHeading">Notes</h4>
+            <button type="button" class="btn btn-primary; homeButton">Go to My Notes</button>
+          </div>    f6def6    fdecef-->
+        </div>
+        <div class="row">
+          <div class="col-sm" style="background-color:#ffcec9; padding-top: 40px; padding-bottom: 40px; text-align: center; border-style: solid; border-width: 4px; border-color: white;">
+            <h4 class="homeHeading">Reminders</h4>
+            <button (click)="goToReminders()" type="button" class="btn btn-primary; homeButton" style="background-color: #fb4d3d">Go to My Reminders</button>
+          </div>
+          <div class="col-sm" style="background-color:#c7faf1; padding-top: 40px; padding-bottom: 40px; text-align: center; border-style: solid; border-width: 4px; border-color: white;">
+            <h4 class="homeHeading">Timetables</h4>
+            <button (click)="goToTimetables()" type="button" class="btn btn-primary; homeButton" style="background-color: #02b692">Go to My Timetables</button>
+          </div>
+        </div>
+      </div>
+      <br><br><br><br>
+</div>
