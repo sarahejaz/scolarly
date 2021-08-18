@@ -1,0 +1,48 @@
+<link href="https://cdn.syncfusion.com/ej2/material.css" rel="stylesheet" />
+<div style="background-color: #e2edfd; overflow-x: hidden;">
+  <div style="text-align: left; margin-top: 8px; margin-left: 8px;">
+    <a href="http://localhost:4200/home">Home</a> > <a href="http://localhost:4200/get-notes">My Notes</a> > <u>Add a Note</u>
+  </div>
+  <br><br><br><br><br>
+  <h2 style="margin-left: 15px; font-weight: bold; text-align: center;">Add a Note</h2>
+  <br><br>
+
+    <div class="row justify-content-center">
+
+
+          <form [formGroup]="noteForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="inputTitle">Title</label>
+              <input class="form-control" type="text" formControlName="title">
+              <!-- error -->
+              <div class="error" style="color: red;" *ngIf="submitted && myForm.title.errors?.required">
+                Name is required
+              </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputDesc">Desc</label>
+                <!--<input class="form-control" type="text" formControlName="description">
+                 error -->
+                
+                  <div style="width: 600px">
+                    <ejs-richtexteditor #fromRTE required name="description"
+                    class="form-control" formControlName="description"
+                    (created)="rteCreated()" id='alltoolRTE' [toolbarSettings]='tools' ></ejs-richtexteditor>
+                  </div>
+                  <div class="error" style="color: red;" *ngIf="submitted && myForm.description.errors?.required">
+                    description is required
+                  </div>
+                
+            </div>
+
+            <br>
+
+            <div class="form-group" style="text-align:center; padding-top: 30px; padding-bottom: 10px">
+              <button class="btn btn-dark btn-sm; saveButton" style="height: 50px; width:120px; padding: 0; color: white; background-color: #345995" type="submit">Save</button>
+            </div>
+            <br><br><br><br>
+          </form>
+
+    </div>
+</div>
